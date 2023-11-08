@@ -1,3 +1,4 @@
+@use 'vars' as vars;
 
 * {
   box-sizing: border-box;
@@ -6,8 +7,8 @@
 }
 
 body {
-  background-color: $light-color;
-  font-family: $font-stack;
+  background-color: vars.$light-color;
+  font-family: vars.$font-stack;
   line-height: 1;
 }
 
@@ -21,6 +22,7 @@ a {
 
 .hero {
   // This is where the bulk of the SCSS styling needs to be done
+  background-color:black;
 
   // Take a look at the other files we've built already. How can they be useful here?
 
