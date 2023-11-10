@@ -1,4 +1,6 @@
-@use 'vars' as vars;
+@use 'util';
+@use 'config';
+@use 'btnConfig';
 
 * {
   box-sizing: border-box;
@@ -7,8 +9,8 @@
 }
 
 body {
-  background-color: vars.$light-color;
-  font-family: vars.$font-stack;
+  background-color: config.$light-color;
+  font-family: config.$font-stack;
   line-height: 1;
 }
 
@@ -21,19 +23,44 @@ a {
 }
 
 .hero {
-  // This is where the bulk of the SCSS styling needs to be done
-  background-color:black;
+  background-color: config.$primary-color;
+  color: config.$light-color;
+  height: 600px;
 
-  // Take a look at the other files we've built already. How can they be useful here?
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-  // Also, take time to review the features of SCSS we've already covered:
-  // 1. $variables
-  // 2. nesting (dont forget about the ampersand (&) parent selector!)
-  // 3. At-Rules
+      ul {
+        display: flex;
+        list-style-type: none;
+      }
+
+      li {
+        padding: 18px;
+      }
+    }
+
+    &-content {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 45px;
+
+      img{
+        width: 40%;
+      }
+
+      h1 {
+        font-size: 45px;
+      }
+    }
 }
 
-// This code is related to some of the aspects of SCSS we have yet to cover.
-// While you don't have to mess with it, it would be advisable to attempt to understand its functionality.
+
+
 $spaceamounts: (1,2,3,4,5);
 
 @each $space in $spaceamounts {
